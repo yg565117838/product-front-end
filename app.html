@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }} >
+<head>
+  {{ HEAD }}
+</head>
+<body {{ BODY_ATTRS }}>
+<!--[if (gt IE 11)|!(IE)]><!-->{{ APP }}<!--<![endif]-->
+
+<!--[if lt IE 10]>
+
+<div style="padding:100px 30px;">
+  <p style="text-align: center;font-size:16px;line-height:34px;text-indent: 2em;margin:40px 0 50px;">
+    温馨提醒：本后台管理工具不能运行在低版本浏览器！<br/>
+    建议升级浏览器或者换个浏览器，并设置新安装的浏览器为默认浏览器。<br/>
+    如果您使用的是360,QQ等双核浏览器，请使用急速模式浏览！</p>
+  <div style="text-align: center;">
+    <a href="https://support.microsoft.com/zh-cn/help/17621/internet-explorer-downloads"
+       style="font-size:16px;color:#fefefe;background:#000000;padding:6px 12px;border-radius: 2px;margin-right:30px;"
+       target="_blank">IE浏览器最新版</a>
+    <a href="https://www.google.cn/chrome/"
+       style="font-size:16px;color:#fefefe;background:#000000;padding:6px 12px;border-radius: 2px;"
+       target="_blank">谷歌浏览器最新版</a>
+  </div>
+</div>
+
+<![endif]-->
+
+
+</body>
+</html>
