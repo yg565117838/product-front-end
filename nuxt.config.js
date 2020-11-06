@@ -18,6 +18,8 @@ export default {
     ]
   },
 
+  loading: false,
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     'element-ui/lib/theme-chalk/index.css',
@@ -50,7 +52,7 @@ export default {
   },
   proxy: {
     '/api': {
-      target: 'https://movie.douban.com',
+      target: 'http://localhost:3030',
       pathRewrite: {'^/api': ''}
     }
   },

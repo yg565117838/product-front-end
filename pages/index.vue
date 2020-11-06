@@ -6,8 +6,9 @@
   export default {
     name: 'index',
     created() {
-      console.log(this)
-      this.$axios.get('/fsdfdsf')
+      this.$axios.get('/admin').then(res=>{
+        console.log(res)
+      })
     }
   }
 </script>

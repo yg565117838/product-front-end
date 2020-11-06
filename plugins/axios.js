@@ -39,7 +39,7 @@ export default function ({ $axios, redirect }) {
   // })
   //响应拦截器
   $axios.onResponse(response=>{
-    return response
+    return response.data
   })
   //响应错误拦截器
   // $axios.onResponseError(err=>{
@@ -74,6 +74,5 @@ export default function ({ $axios, redirect }) {
     //   }
     //   return Promise.reject(error);
     // }
-    // return error
   })
 }
