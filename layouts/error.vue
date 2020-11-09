@@ -7,10 +7,11 @@
 </template>
 
 <script>
-    export default {
-        name: "error",
-        props: ['error'],
-    }
+  export default {
+    name: "error",
+    props: ['error'],
+    layout:"preview",
+  }
 </script>
 
 <style scoped lang="scss">

@@ -1,5 +1,5 @@
 <template>
-  <el-container>
+  <el-container class="total-container">
     <el-aside width="200px">
       <menu-bar></menu-bar>
     </el-aside>
@@ -22,5 +22,11 @@
   }
 </script>
 <style scoped lang="scss">
-
+  .total-container{
+    min-width: 1280px;
+    flex-shrink: 0;
+  }
+  .el-main{
+    background: #eee;
+  }
 </style>

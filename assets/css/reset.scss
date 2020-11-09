@@ -1,4 +1,9 @@
 *{
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+/*取消element-ui横向滚动条*/
+.scrollbar-wrapper {
+  overflow-x: hidden;
 }
