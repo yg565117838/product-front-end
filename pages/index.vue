@@ -6,9 +6,9 @@
   export default {
     name: 'index',
     created() {
-      // this.$axios.get('/admin').then(res=>{
-      //   console.log(res)
-      // })
+      this.$axios.get('?id=456').then(res=>{
+        console.log(res)
+      })
     }
   }
 </script>

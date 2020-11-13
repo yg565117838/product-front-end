@@ -4,11 +4,12 @@
       <menu-bar></menu-bar>
     </el-aside>
     <el-container>
-      <el-header>头</el-header>
+      <el-header>
+        <page-header></page-header>
+      </el-header>
       <el-main>
         <Nuxt></Nuxt>
       </el-main>
-      <el-footer>脚</el-footer>
     </el-container>
   </el-container>
 <!--  <div>-->
@@ -17,8 +18,9 @@
 </template>
 <script>
   import MenuBar from "../components/menu/menuBar";
+  import PageHeader from "../components/header/pageHeader";
   export default {
-    components: {MenuBar}
+    components: {PageHeader, MenuBar},
   }
 </script>
 <style scoped lang="scss">

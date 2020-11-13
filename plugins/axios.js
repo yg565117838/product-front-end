@@ -1,17 +1,20 @@
 import {Loading, Notification,MessageBox } from 'element-ui';
 import qs from 'qs';
-export default function ({ $axios, redirect }) {
-  // switch (process.env.NODE_ENV){
-  //   case 'production':
+export default function ({ $axios, redirect}) {
+  switch (process.env.NODE_ENV){
+    case 'development':
       $axios.defaults.baseURL = '/api'
-  //     break;
-  //   case 'test':
-  //     $axios.defaults.baseURL = 'http"//api.456.com'
-  //     break;
-  //   default:
-  //     $axios.defaults.baseURL = 'http"//api.789.com'
-  //     break;
-  // }
+      break;
+    case 'testing':
+      $axios.defaults.baseURL = '/api'
+      break;
+    case 'production':
+      $axios.defaults.baseURL = '/api'
+      break;
+    default:
+      $axios.defaults.baseURL = '/api'
+      break;
+  }
 
   $axios.defaults.timeout=10000;
   $axios.defaults.withCredentials = true
@@ -54,25 +57,26 @@ export default function ({ $axios, redirect }) {
   $axios.onError(error => {
     console.log('错误拦截器')
     const code = parseInt(error.response && error.response.status)
-    // if (code) {
-    //   switch(code){
-    //     case 401:
-    //       //一般未登录
-    //       break;
-    //     case 403:
-    //       //一般token过期，
-    //       break;
-    //     case 404:
-    //       //找不到页面
-    //       break
-    //   }
-    // }else{
-    //   //判断断网
-    //   if(!window.navigator.onLine){
-    //     //断网处理：可以跳转到断网页面
-    //     return
-    //   }
-    //   return Promise.reject(error);
-    // }
+    if (code) {
+      switch(code){
+        case 401:
+          //一般未登录
+          // redirect('/login')
+          break;
+        case 403:
+          //一般token过期，
+          break;
+        case 404:
+          //找不到页面
+          break
+      }
+    }else{
+      //判断断网
+      if(!window.navigator.onLine){
+        //断网处理：可以跳转到断网页面
+        return
+      }
+      return Promise.reject(error);
+    }
   })
 }

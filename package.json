@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
+    "dev": "cross-env NODE_ENV=development nuxt",
+    "test": "cross-env NODE_ENV=testing nuxt",
+    "build": "cross-env NODE_ENV=production nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
@@ -15,6 +16,7 @@
     "nuxt": "^2.14.6"
   },
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "node-sass": "^5.0.0",
     "sass-loader": "^10.0.5"
   }
